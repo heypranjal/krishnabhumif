@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, Play, Calendar } from 'lucide-react';
+import heroImage from "../assets/hero.jpeg";
+
 
 const Hero = () => {
   const [currentText, setCurrentText] = useState('');
@@ -14,34 +16,33 @@ const Hero = () => {
   
   const [textIndex, setTextIndex] = useState(0);
 
-  useEffect(() => {
-    let timeout: NodeJS.Timeout;
-    
-    if (isTyping) {
-      const targetText = texts[textIndex];
-      if (currentText.length < targetText.length) {
-        timeout = setTimeout(() => {
-          setCurrentText(targetText.slice(0, currentText.length + 1));
-        }, 100);
-      } else {
-        timeout = setTimeout(() => {
-          setIsTyping(false);
-        }, 2000);
-      }
+useEffect(() => {
+  let timeout: ReturnType<typeof setTimeout>;
+
+  if (isTyping) {
+    const targetText = texts[textIndex];
+    if (currentText.length < targetText.length) {
+      timeout = setTimeout(() => {
+        setCurrentText(targetText.slice(0, currentText.length + 1));
+      }, 100);
     } else {
-      if (currentText.length > 0) {
-        timeout = setTimeout(() => {
-          setCurrentText(currentText.slice(0, -1));
-        }, 50);
-      } else {
-        setTextIndex((prev) => (prev + 1) % texts.length);
-        setIsTyping(true);
-      }
+      timeout = setTimeout(() => {
+        setIsTyping(false);
+      }, 2000);
     }
+  } else {
+    if (currentText.length > 0) {
+      timeout = setTimeout(() => {
+        setCurrentText(currentText.slice(0, -1));
+      }, 50);
+    } else {
+      setTextIndex((prev) => (prev + 1) % texts.length);
+      setIsTyping(true);
+    }
+  }
 
-    return () => clearTimeout(timeout);
-  }, [currentText, isTyping, textIndex, texts]);
-
+  return () => clearTimeout(timeout);
+}, [currentText, isTyping, textIndex, texts]);
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -55,7 +56,7 @@ const Hero = () => {
       <motion.div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: 'url("/src/assets/hero.jpeg")',
+          backgroundImage: `url(${heroImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',

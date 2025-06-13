@@ -11,6 +11,7 @@ import flower from "../assets/logoimage9.png";  // Ensure this path is correct
 import cafe from "../assets/logoimage10.png";  // Ensure this path is correct
 import play from "../assets/logoimage11.png";  // Ensure this path is correct
 import power from "../assets/logoimage12.png";  // Ensure this path is correct
+import featherImage from "../assets/feather.jpeg"
 
 const Amenities = () => {
   const amenities = [
@@ -117,7 +118,7 @@ const Amenities = () => {
       <motion.div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: 'url("/src/assets/feather.jpeg")',
+          backgroundImage: `url(${featherImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
