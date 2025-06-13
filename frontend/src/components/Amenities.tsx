@@ -7,8 +7,10 @@ import parking from "../assets/logoimage5.png";  // Ensure this path is correct
 import fitness from "../assets/logoimage6.png";  // Ensure this path is correct
 import community from "../assets/logoimage7.png";  // Ensure this path is correct
 import pool from "../assets/logoimage8.png";  // Ensure this path is correct
-
-
+import flower from "../assets/logoimage9.png";  // Ensure this path is correct
+import cafe from "../assets/logoimage10.png";  // Ensure this path is correct
+import play from "../assets/logoimage11.png";  // Ensure this path is correct
+import power from "../assets/logoimage12.png";  // Ensure this path is correct
 const Amenities = () => {
   const amenities = [
     {
@@ -60,25 +62,25 @@ const Amenities = () => {
       color: "from-cyan-400 to-blue-500"
     },
     {
-      icon: temple,
+      icon: flower,
       title: "Flower Gardens",
       description: "Dedicated spaces for growing flowers for temple offerings",
       color: "from-pink-400 to-rose-l"
     },
     {
-      icon: temple,
+      icon: cafe,
       title: "Café & Restaurant",
       description: "Pure vegetarian dining with traditional Krishna cuisine",
       color: "from-amber-400 to-yellow-500"
     },
     {
-      icon: temple,
+      icon: play,
       title: "Children's Play Area",
       description: "Safe and fun playground for children of all ages",
       color: "from-purple-400 to-violet-500"
     },
     {
-      icon: temple,
+      icon: power,
       title: "Power Backup",
       description: "Uninterrupted power supply with backup generators",
       color: "from-yellow-500 to-amber-600"
