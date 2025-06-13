@@ -1,6 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Bot as Lotus, Home, Shield } from 'lucide-react';
+import Lotus from '../assets/logoimage13.png'; // Fixed import
+import Heart from '../assets/logoimage14.png';
+import Home from '../assets/logoimage15.png';
+import Shield from '../assets/logoimage16.png'; // Fixed import
 
 const Experience = () => {
   const experiences = [
@@ -76,7 +79,7 @@ const Experience = () => {
           y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
         }}
       >
-        <Lotus className="w-full h-full" />
+        <img src={Lotus} alt="Lotus" className="w-full h-full object-contain" />
       </motion.div>
 
       <motion.div
@@ -90,7 +93,7 @@ const Experience = () => {
           y: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 },
         }}
       >
-        <Heart className="w-full h-full" />
+        <img src={Heart} alt="Heart" className="w-full h-full object-contain" />
       </motion.div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -131,7 +134,6 @@ const Experience = () => {
           viewport={{ once: true, margin: "-100px" }}
         >
           {experiences.map((experience, index) => {
-            const IconComponent = experience.icon;
             return (
               <motion.div key={index} variants={itemVariants} className="group">
                 <motion.div
@@ -150,8 +152,9 @@ const Experience = () => {
                     }}
                     transition={{ duration: 0.5 }}
                   >
-                    <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
-                      <IconComponent className="w-8 h-8 text-white" />
+                    {/* Circular container */}
+                    <div className="w-24 h-24 rounded-full overflow-hidden flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                      <img src={experience.icon} alt={experience.title} className="w-full h-full object-cover" />
                     </div>
                   </motion.div>
 

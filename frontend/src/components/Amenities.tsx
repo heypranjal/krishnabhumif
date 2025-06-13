@@ -11,6 +11,7 @@ import flower from "../assets/logoimage9.png";  // Ensure this path is correct
 import cafe from "../assets/logoimage10.png";  // Ensure this path is correct
 import play from "../assets/logoimage11.png";  // Ensure this path is correct
 import power from "../assets/logoimage12.png";  // Ensure this path is correct
+
 const Amenities = () => {
   const amenities = [
     {
@@ -26,13 +27,13 @@ const Amenities = () => {
       color: "from-blue-400 to-cyan-500"
     },
     {
-      icon:garden,
+      icon: garden,
       title: "Lush Gardens",
       description: "Beautifully landscaped gardens with native plants and flowers",
       color: "from-green-400 to-emerald-500"
     },
     {
-      icon:security,
+      icon: security,
       title: "24/7 Security",
       description: "Round-the-clock security with modern surveillance systems",
       color: "from-gray-600 to-gray-800"
@@ -208,12 +209,11 @@ const Amenities = () => {
                   }}
                   transition={{ duration: 0.5 }}
                 >
-                  <motion.div
-                    className={`w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300`}
-                  >
+                  {/* Circular container */}
+                  <div className="w-24 h-24 rounded-full overflow-hidden flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
                     {/* Render image icon */}
-                    <img src={amenity.icon} alt={amenity.title} className="w-16 h-16 object-contain" />
-                  </motion.div>
+                    <img src={amenity.icon} alt={amenity.title} className="w-full h-full object-cover" />
+                  </div>
                 </motion.div>
                 
                 <motion.h3
