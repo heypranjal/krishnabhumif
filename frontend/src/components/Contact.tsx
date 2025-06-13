@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import featherImage from "../assets/feather.png"; // Adjust the path as needed
 import {
   Phone,
   Mail,
@@ -129,7 +130,7 @@ const Contact = () => {
       <motion.div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: 'url("/src/assets/feather.jpeg")',
+          backgroundImage: `url(${featherImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
