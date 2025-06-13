@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
-import featherImage from '../assets/feather.png'; // Adjust the path as necessary
+import featherImage from '../assets/feather.jpeg'; // Adjust the path as necessary
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

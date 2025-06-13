@@ -3,7 +3,7 @@ import villa1 from "../assets/logoimage1.png";  // Ensure this path is correct
 import villa2 from "../assets/logoimage10.png";  // Ensure this path is correct
 import apartment1 from "../assets/logoimage16.png";  // Ensure this path is correct
 import apartment2 from "../assets/logoimage15.png";  // Ensure this path is correct
-import featherImage from "../assets/feather.png";  // Ensure this path is correct
+import featherImage from "../assets/feather.jpeg";  // Ensure this path is correct
 
 const KrishnaBhumi = () => {
   const villas = [

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import featherImage from "../assets/feather.png"; // Adjust the path as needed
+import featherImage from "../assets/feather.jpeg"; // Adjust the path as needed
 import {
   Phone,
   Mail,
