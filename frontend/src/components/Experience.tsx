@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import Lotus from '../assets/logoimage13.png'; // Fixed import
 import Heart from '../assets/logoimage14.png';

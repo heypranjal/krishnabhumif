@@ -1,4 +1,4 @@
-// import React from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -7,12 +7,10 @@ import Amenities from "./components/Amenities";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import VillaAndResidence from "./components/Villaandresidence";
 import { Toaster } from "react-hot-toast";
 
 function App() {
-  // You can make this dynamic later using URL query or routing
-  // const leadSource: "Facebook" | "YouTube" | "Website" = "Website";
-
   return (
     <motion.div
       className="min-h-screen"
@@ -25,6 +23,7 @@ function App() {
       <Hero />
       <Experience />
       <Amenities />
+      <VillaAndResidence />
       <Testimonials />
       <Contact />
       <Footer />
