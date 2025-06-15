@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import arcadeImage from '../assets/feather.jpeg'; // Replace with your actual image path
+const featherImage = "https://i.ibb.co/pj3ndCj6/feather-copy.png";
 
 const KrishnaBhumiArcade = () => {
   const features = [
@@ -15,7 +15,7 @@ const KrishnaBhumiArcade = () => {
       <motion.div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `url(${arcadeImage})`,
+          backgroundImage: `url(${featherImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',

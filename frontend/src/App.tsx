@@ -14,7 +14,7 @@ import { Toaster } from "react-hot-toast";
 import Awards from "./components/Awards";
 import Partner from "./pages/Partner";
 import ContactUs from "./pages/ContactUs";
-
+import Residential from "./pages/Residential";
 function MainPage() {
   return (
     <>
@@ -53,6 +53,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/partners" element={<Partner/>} />
           <Route path="/contact-us" element={<ContactUs/>} />
+          <Route path="Residential" element={<Residential />} />
           {/* Add more routes as needed */}
         </Routes>
       </motion.div>

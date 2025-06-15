@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, Play, Calendar } from 'lucide-react';
-import heroImage from "../assets/hero.jpeg";
-
+const heroImage = "https://i.ibb.co/LhqVWQvk/hero-copy.jpg" ;
 
 const Hero = () => {
   const [currentText, setCurrentText] = useState('');

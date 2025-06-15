@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import featherImage from "../assets/feather.jpeg";
+const featherImage = "https://i.ibb.co/pj3ndCj6/feather-copy.png";
+
 
 interface FormData {
   organizationName: string;

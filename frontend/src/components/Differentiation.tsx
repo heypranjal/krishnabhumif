@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import featherImage from "../assets/feather.jpeg";
+const featherImage = "https://i.ibb.co/pj3ndCj6/feather-copy.png";
 
 // Replace these with your actual icons
 import spiritual from "../assets/logoimage1.png";

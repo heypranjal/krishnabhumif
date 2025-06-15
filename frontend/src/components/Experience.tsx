@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import Lotus from '../assets/logoimage13.png'; // Fixed import
-import Heart from '../assets/logoimage14.png';
-import Home from '../assets/logoimage15.png';
-import Shield from '../assets/logoimage16.png'; // Fixed import
+import Lotus from '../assets/logoimage1.png'; // Fixed import
+import Heart from '../assets/logoimage1.png';
+import Home from '../assets/logoimage1.png';
+import Shield from '../assets/logoimage1.png'; // Fixed import
 
 const Experience = () => {
   const experiences = [
