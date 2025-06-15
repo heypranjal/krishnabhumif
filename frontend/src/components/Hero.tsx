@@ -9,9 +9,8 @@ const Hero = () => {
   const [isTyping, setIsTyping] = useState(true);
   
   const texts = [
-    "Where divinity meets comfort...",
-    "Experience Krishna's sacred land...",
-    "Your spiritual home awaits..."
+    "Where timeless devotion meets modern living...",
+    
   ];
   
   const [textIndex, setTextIndex] = useState(0);
@@ -109,7 +108,7 @@ useEffect(() => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.7 }}
           >
-            Krishna <span className="text-yellow-400">Bhumi</span>
+            Krishna <span className="text-orange-500">Bhumi</span>
           </motion.h1>
           
           <div className="h-16 md:h-20 flex items-center justify-center mb-8">
