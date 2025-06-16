@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Home, Phone, Star, Users, MapPin, Menu, X } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 const logo = "https://i.ibb.co/HLvdRBkZ/weblogo-copy.png";
 
 const Header = () => {
@@ -8,10 +9,10 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
-  // Mock navigate function for demonstration
-  const navigate = (path: string) => {
-    console.log(`Navigating to: ${path}`);
+  const handleNavigation = (path: string) => {
+    navigate(path);
     setIsMobileMenuOpen(false);
     setIsProjectsOpen(false);
   };
@@ -61,7 +62,7 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <button
-            onClick={() => navigate('/')}
+            onClick={() => handleNavigation('/')}
             className="flex items-center space-x-2 z-50"
           >
             <img
@@ -106,7 +107,7 @@ const Header = () => {
                     {isProjectsOpen && (
                       <div className="absolute top-full mt-2 bg-white shadow-md rounded-lg py-2 w-40 z-50">
                         <button
-                          onClick={() => navigate('/residential')}
+                          onClick={() => handleNavigation('/residential')}
                           className="w-full text-left px-4 py-2 hover:bg-gray-100 text-gray-700"
                         >
                           Residential
@@ -126,7 +127,7 @@ const Header = () => {
               return (
                 <button
                   key={item.id}
-                  onClick={() => navigate(item.id)}
+                  onClick={() => handleNavigation(item.id)}
                   className={`flex items-center space-x-1 px-3 py-2 rounded-lg transition-all duration-300 relative group hover:scale-105 ${
                     isScrolled
                       ? 'text-gray-700 hover:text-orange-600'
@@ -145,7 +146,7 @@ const Header = () => {
 
           {/* Desktop CTA Button */}
           <button
-            onClick={() => scrollToSection('contact')}
+            onClick={() => handleNavigation('/contact-us')}
             className="hidden md:block bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
             style={{
               boxShadow: 'none',
@@ -205,7 +206,7 @@ const Header = () => {
                       {isProjectsOpen && (
                         <div className="pl-6 space-y-1 transform transition-all duration-200">
                           <button
-                            onClick={() => navigate('/residential')}
+                            onClick={() => handleNavigation('/residential')}
                             className="w-full text-left px-4 py-2 text-gray-600 hover:bg-gray-50 rounded-lg transition-colors duration-200"
                           >
                             Residential
@@ -225,7 +226,7 @@ const Header = () => {
                 return (
                   <button
                     key={item.id}
-                    onClick={() => navigate(item.id)}
+                    onClick={() => handleNavigation(item.id)}
                     className="w-full flex items-center space-x-2 px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-all duration-200 hover:scale-105"
                   >
                     <IconComponent className="w-5 h-5" />
@@ -237,7 +238,7 @@ const Header = () => {
               {/* Mobile CTA Button */}
               <div className="pt-4 border-t border-gray-200 mt-4">
                 <button
-                  onClick={() => navigate('/contact-us')}
+                  onClick={() => handleNavigation('/contact-us')}
                   className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
                 >
                   Book Visit

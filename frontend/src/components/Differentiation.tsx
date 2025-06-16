@@ -3,12 +3,12 @@ const featherImage = "https://i.ibb.co/pj3ndCj6/feather-copy.png";
 
 // Replace these with your actual icons
 import spiritual from "../assets/logoimage1.png";
-import access from "../assets/logoimage1.png";
-import architecture from "../assets/logoimage1.png";
-import wellness from "../assets/logoimage1.png";
-import eldercare from "../assets/logoimage1.png";
-import green from "../assets/logoimage1.png";
-import infra from "../assets/logoimage1.png";
+const access = "https://i.ibb.co/7dmZQTL0/divinelogo.png"; // Ensure this path is correct
+const architecture = "https://i.ibb.co/N6mzjMBf/archlogo.png";// Ensure this path is correct
+const wellness ="https://i.ibb.co/67vmGL7c/holilogo.png"; // Ensure this path is correct
+const eldercare = "https://i.ibb.co/XZWqtn7t/elder.png" 
+const green ="https://i.ibb.co/9HzJNzyR/green.png"
+const infra ="https://i.ibb.co/BhW5mkF/infra.png"
 
 const differentiators = [
   {
