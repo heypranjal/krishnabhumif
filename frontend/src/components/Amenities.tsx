@@ -114,7 +114,7 @@ const Amenities = () => {
             transition={{ duration: 1, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            World-Class <span className="text-orange-500">Amenities</span>
+            World-Class <span className="text-yellow-500">Amenities</span>
           </motion.h2>
           <motion.p
             className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed"

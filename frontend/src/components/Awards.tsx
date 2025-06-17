@@ -185,7 +185,7 @@ const Awards = () => {
             transition={{ duration: 1, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Awards & <span className="text-orange-500">Recognition</span>
+            Awards & <span className="text-yellow-500">Recognition</span>
           </motion.h2>
           <motion.p
             className="text-xl text-black max-w-3xl mx-auto leading-relaxed"

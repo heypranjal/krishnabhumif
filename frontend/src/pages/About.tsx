@@ -29,7 +29,7 @@ const About = () => {
         <div className="relative z-10 text-center px-4">
           <div>
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              About <span className="text-orange-500">Krishna Bhumi</span>
+              About <span className="text-yellow-500">Krishna Bhumi</span>
             </h1>
             <p className="mt-4 text-lg md:text-xl text-white/80">
               Where spiritual heritage meets contemporary living
@@ -171,10 +171,10 @@ const About = () => {
             <div className="bg-white/90 rounded-3xl p-8 md:p-12 shadow-xl border border-white/30">
               <div className="flex flex-col lg:flex-row items-center gap-12">
                 <div className="lg:w-1/2">
-                  <h2 className="text-4xl font-bold mb-6 text-gray-800">
-                    The Krishna Bhumi <span className="text-orange-500">Vision</span>
+                  <h2 className="text-4xl font-bold mb-6 text-black/100">
+                    The Krishna Bhumi <span className="text-yellow-500">Vision</span>
                   </h2>
-                  <p className="mb-8 text-gray-700 text-lg leading-relaxed">
+                  <p className="mb-8 text-black-700 text-lg leading-relaxed">
                     Krishna Bhumi is more than just a residential and commercial development – 
                     it's an iconic life-changing experience centered around a magnificent Krishna temple.
                   </p>

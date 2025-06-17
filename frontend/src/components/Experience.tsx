@@ -111,7 +111,7 @@ const Experience = () => {
             viewport={{ once: true }}
           >
             Experience Life in{" "}
-            <span className="text-orange-400">Krishna Bhumi</span>
+            <span className="text-yellow-500">Krishna Bhumi</span>
           </motion.h2>
           <motion.p
             className="text-xl text-amber-100 max-w-3xl mx-auto leading-relaxed"

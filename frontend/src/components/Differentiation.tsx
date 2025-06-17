@@ -79,7 +79,7 @@ const KrishnaBhumiDifferentiation = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl font-bold text-center mb-10 text-white">
-            Key Definition of <span className="text-orange-500">Krishna Bhumi</span>
+            Key Definition of <span className="text-yellow-500">Krishna Bhumi</span>
           </h2>
           <p className="text-lg text-center text-black mb-12">
             Experience a unique blend of spiritual serenity and modern luxury

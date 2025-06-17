@@ -41,7 +41,7 @@ const KrishnaBhumiArcade = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white/100 mb-4">
-            Krishna Bhumi <span className="text-orange-500">Arcade</span>
+            Krishna Bhumi <span className="text-yellow-500">Arcade</span>
           </h2>
           <p className="text-lg text-black max-w-3xl mx-auto">
             A premium retail destination where luxury meets convenience. Experience a curated selection of high-end boutiques, fine dining restaurants, and entertainment venues.
