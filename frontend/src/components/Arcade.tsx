@@ -10,17 +10,22 @@ const KrishnaBhumiArcade = () => {
   ];
 
   return (
-    <section 
-      id="arcade"
-      className="py-20 relative overflow-hidden bg-white-60"
-      style={{
-        backgroundImage: `url(${featherImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-      }}
-    >
+    <section id="arcade" className="py-20 relative overflow-hidden bg-white-60">
+      {/* Background Image */}
+      <motion.div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url(${featherImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+          opacity: 100,
+        }}
+      />
+
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+
         <motion.div
           className="bg-white/30 backdrop-blur-sm rounded-2xl p-10 shadow-xl border border-gray-100"
           initial={{ opacity: 0, scale: 0.95 }}
@@ -29,20 +34,19 @@ const KrishnaBhumiArcade = () => {
           viewport={{ once: true }}
         >
           <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white/100 mb-4">
-              Krishna Bhumi <span className="text-yellow-500">Arcade</span>
-            </h2>
-            <p className="text-lg text-black max-w-3xl mx-auto">
-              A premium retail destination where luxury meets convenience. Experience a curated selection of high-end boutiques, fine dining restaurants, and entertainment venues.
-            </p>
-          </motion.div>
-
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-white/100 mb-4">
+            Krishna Bhumi <span className="text-orange-500">Arcade</span>
+          </h2>
+          <p className="text-lg text-black max-w-3xl mx-auto">
+            A premium retail destination where luxury meets convenience. Experience a curated selection of high-end boutiques, fine dining restaurants, and entertainment venues.
+          </p>
+        </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((item, idx) => (
               <motion.div

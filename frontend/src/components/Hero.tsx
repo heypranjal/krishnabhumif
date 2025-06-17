@@ -10,33 +10,33 @@ const Hero = () => {
   const texts = ["Where timeless devotion meets modern living..."];
   const [textIndex, setTextIndex] = useState(0);
 
-  useEffect(() => {
-    let timeout: ReturnType<typeof setTimeout>;
-    if (isTyping) {
-      const targetText = texts[textIndex];
-      if (currentText.length < targetText.length) {
-        timeout = setTimeout(() => {
-          setCurrentText(targetText.slice(0, currentText.length + 1));
-        }, 100);
-      } else {
-        timeout = setTimeout(() => {
-          setIsTyping(false);
-        }, 2000);
-      }
+useEffect(() => {
+  let timeout: ReturnType<typeof setTimeout>;
+  if (isTyping) {
+    const targetText = texts[textIndex];
+    if (currentText.length < targetText.length) {
+      timeout = setTimeout(() => {
+        setCurrentText(targetText.slice(0, currentText.length + 1));
+      }, 100);
     } else {
-      if (currentText.length > 0) {
-        timeout = setTimeout(() => {
-          setCurrentText(currentText.slice(0, -1));
-        }, 50);
-      } else {
-        setTextIndex((prev) => (prev + 1) % texts.length);
-        setIsTyping(true);
-      }
+      timeout = setTimeout(() => {
+        setIsTyping(false);
+      }, 2000);
     }
-    return () => clearTimeout(timeout);
-  }, [currentText, isTyping, textIndex, texts]);
+  } else {
+    if (currentText.length > 0) {
+      timeout = setTimeout(() => {
+        setCurrentText(currentText.slice(0, -1));
+      }, 50);
+    } else {
+      setTextIndex((prev) => (prev + 1) % texts.length);
+      setIsTyping(true);
+    }
+  }
+  return () => clearTimeout(timeout);
+}, [currentText, isTyping, textIndex, texts]);
 
-  const scrollToSection = (sectionId: string) => {
+const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -44,23 +44,19 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
-      <motion.div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-        }}
-        initial={{ scale: 1.1 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 10, ease: "easeOut" }}
-      >
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30" />
-      </motion.div>
+    <section 
+      id="hero" 
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{
+        backgroundImage: `url(${heroImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+      }}
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30" />
 
       {/* Floating elements */}
       <motion.div
