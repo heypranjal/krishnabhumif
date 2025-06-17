@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 // Your existing imports
 const heroImage = "https://i.ibb.co/LhqVWQvk/hero-copy.jpg" ;
@@ -18,19 +17,6 @@ import {
   Lightbulb,
 } from "lucide-react";
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.15,
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  }),
-};
-
 const About = () => {
   return (
     <>
@@ -39,34 +25,20 @@ const About = () => {
         className="relative w-full h-[807px] bg-center bg-cover flex items-center justify-center"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
         <div className="relative z-10 text-center px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-          >
-            <motion.h1
-              className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.7 }}
-            >
+          <div>
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
               About <span className="text-orange-500">Krishna Bhumi</span>
-            </motion.h1>
-            <motion.p
-              className="mt-4 text-lg md:text-xl text-white/80"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-            >
+            </h1>
+            <p className="mt-4 text-lg md:text-xl text-white/80">
               Where spiritual heritage meets contemporary living
-            </motion.p>
-          </motion.div>
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* IMPROVED: Single background container with proper opacity */}
+      {/* IMPROVED: Single background container with clear visibility */}
       <div className="relative min-h-screen">
         {/* Background image layer */}
         <div 
@@ -77,48 +49,30 @@ const About = () => {
         />
         
         {/* Overlay layer for better readability */}
-        <div className="absolute inset-0 bg-white/80 backdrop-blur-[1px]" />
+        <div className="absolute inset-0 bg-white/50" />
         
         {/* Content layer */}
         <div className="relative z-10 text-gray-900">
           
           {/* Introduction Section */}
           <section className="py-16 px-4 max-w-7xl mx-auto">
-            <motion.div
-              className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/30"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <motion.p
-                className="text-lg leading-relaxed text-center text-gray-800"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-                viewport={{ once: true }}
-              >
+            <div className="bg-white/80 rounded-2xl p-8 shadow-lg border border-white/30">
+              <p className="text-lg leading-relaxed text-center text-gray-800">
                 Nestled in the sacred city of Vrindavan along the strategic Chhatikara Road,
                 Krishna Bhumi represents the culmination of Infinity Group's vision to
                 create transformative living spaces that honor both tradition and innovation.
                 As an <span className="text-yellow-600 font-semibold">IGBC Gold-rated </span>
                 development, it stands as a testament to our commitment to sustainable and
                 environmentally conscious construction.
-              </motion.p>
-            </motion.div>
+              </p>
+            </div>
           </section>
 
           {/* Residential Phases Section */}
           <section className="py-16 px-4 max-w-7xl mx-auto">
-            <motion.h2 
-              className="text-3xl md:text-4xl font-bold text-center mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
               <span className="text-gray-800">Our</span> <span className="text-orange-500">Residential Phases</span>
-            </motion.h2>
+            </h2>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
@@ -141,14 +95,9 @@ const About = () => {
                   badge: "Upcoming"
                 }
               ].map((item, i) => (
-                <motion.div
+                <div
                   key={item.title}
-                  className="group relative h-80 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.2, duration: 0.6 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.03, y: -5 }}
+                  className="group relative h-80 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105"
                 >
                   {/* Background image */}
                   <div
@@ -180,7 +129,7 @@ const About = () => {
                       </p>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </section>
@@ -205,33 +154,21 @@ const About = () => {
                   text: "Creating sustainable communities with deep connections to Vrindavan."
                 }
               ].map((item, i) => (
-                <motion.div
+                <div
                   key={i}
-                  custom={i}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={cardVariants}
-                  className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-8 text-center hover:scale-105 hover:shadow-2xl transition-all duration-300"
-                  whileHover={{ y: -10 }}
+                  className="bg-white/90 rounded-2xl shadow-lg p-8 text-center hover:scale-105 hover:shadow-2xl transition-all duration-300"
                 >
                   <div className="flex justify-center mb-6">{item.icon}</div>
                   <h3 className="text-xl font-bold mb-4 text-gray-800">{item.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{item.text}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </section>
 
           {/* Vision Section */}
           <section className="py-16 px-4 max-w-7xl mx-auto">
-            <motion.div
-              className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-white/30"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
+            <div className="bg-white/90 rounded-3xl p-8 md:p-12 shadow-xl border border-white/30">
               <div className="flex flex-col lg:flex-row items-center gap-12">
                 <div className="lg:w-1/2">
                   <h2 className="text-4xl font-bold mb-6 text-gray-800">
@@ -265,30 +202,19 @@ const About = () => {
                         icon: "✨"
                       },
                     ].map((item, i) => (
-                      <motion.div
+                      <div
                         key={i}
-                        className="bg-gradient-to-br from-white/70 to-white/50 backdrop-blur-sm rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300"
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: i * 0.1, duration: 0.5 }}
-                        viewport={{ once: true }}
-                        whileHover={{ scale: 1.05 }}
+                        className="bg-gradient-to-br from-white/80 to-white/60 rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
                       >
                         <div className="text-2xl mb-2">{item.icon}</div>
                         <h4 className="font-bold mb-1 text-gray-800">{item.title}</h4>
                         <p className="text-sm text-gray-600">{item.text}</p>
-                      </motion.div>
+                      </div>
                     ))}
                   </div>
                 </div>
 
-                <motion.div
-                  className="lg:w-1/2"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8 }}
-                  viewport={{ once: true }}
-                >
+                <div className="lg:w-1/2">
                   <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
                     <div
                       className="absolute inset-0 bg-cover bg-center"
@@ -303,9 +229,9 @@ const About = () => {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               </div>
-            </motion.div>
+            </div>
           </section>
 
           {/* Society & Philosophy Section */}
@@ -323,35 +249,23 @@ const About = () => {
                   text: "Creating spaces where modern comfort harmonizes with spiritual serenity.",
                 }
               ].map((item, i) => (
-                <motion.div
+                <div
                   key={i}
-                  custom={i}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={cardVariants}
-                  className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-8 hover:scale-105 transition-all duration-300"
-                  whileHover={{ y: -5 }}
+                  className="bg-white/90 rounded-2xl shadow-lg p-8 hover:scale-105 transition-all duration-300"
                 >
                   <div className="flex items-center gap-4 mb-4">
                     {item.icon}
                     <h3 className="text-2xl font-bold text-gray-800">{item.title}</h3>
                   </div>
                   <p className="text-gray-600 leading-relaxed">{item.text}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </section>
 
           {/* Achievements Section */}
           <section className="py-16 px-4 max-w-7xl mx-auto">
-            <motion.div
-              className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-white/30"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
+            <div className="bg-white/95 rounded-3xl p-8 md:p-12 shadow-xl border border-white/30">
               <h2 className="text-center text-3xl md:text-4xl font-bold mb-12 text-gray-800">
                 Our <span className="text-orange-500">Achievements</span>
               </h2>
@@ -374,23 +288,17 @@ const About = () => {
                     text: "IGBC Gold-rated excellence in sustainable practices."
                   }
                 ].map((item, i) => (
-                  <motion.div
+                  <div
                     key={i}
-                    custom={i}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    variants={cardVariants}
-                    className="bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg p-6 text-center hover:scale-105 transition-all duration-300"
-                    whileHover={{ y: -10 }}
+                    className="bg-white/80 rounded-2xl shadow-lg p-6 text-center hover:scale-105 transition-all duration-300"
                   >
                     <div className="flex justify-center mb-6">{item.icon}</div>
                     <h3 className="text-xl font-bold mb-4 text-gray-800">{item.title}</h3>
                     <p className="text-gray-600 leading-relaxed">{item.text}</p>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </section>
 
         </div>

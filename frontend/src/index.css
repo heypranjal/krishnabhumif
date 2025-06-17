@@ -2,17 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Global Smooth Scrolling - Add this to your index.css or App.css */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Adjust based on your header height */
+/* DO NOT use scroll-behavior with Locomotive Scroll */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Required for Locomotive to control scroll */
 }
 
+/* Remove scroll-behavior (Locomotive handles it) */
+/* scroll-padding-top is not needed as Locomotive manages scroll positioning */
 * {
-  scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
-/* Optional: Enhanced scrollbar styling */
+/* Optional: Enhanced scrollbar styling (will only apply if Locomotive is disabled or on fallback devices) */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -29,4 +33,18 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #feb47b, #ff7e5f);
+}
+
+/* Custom font */
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('/fonts/Chronicle Display Black.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'MyCustomFont', sans-serif;
+  background-color: #fff; /* Optional: set a default bg */
+  color: #000; /* Optional: ensure text is visible */
 }

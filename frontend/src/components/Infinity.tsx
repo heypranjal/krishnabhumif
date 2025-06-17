@@ -102,7 +102,7 @@ const InfinityGroup = () => {
                   transition={{ duration: 1, delay: 0.2 }}
                   viewport={{ once: true }}
                 >
-                  <span className='text-white'>Infinity</span> <span className='text-orange-500'>Group</span>
+                  <span className='text-white'>Infinity</span> <span className='text-yellow-500'>Group</span>
                   <div className="h-1 w-20 bg-orange-500 mt-2"></div>
                 </motion.h1>
                 <motion.p
