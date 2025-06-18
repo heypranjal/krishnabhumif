@@ -53,19 +53,6 @@ const Experience = () => {
 
   return (
     <section id="experience" className="relative py-20 overflow-hidden">
-      {/* Parallax background with feather image */}
-      <motion.div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: 'url("/src/assets/feather.jpeg")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-        }}
-      >
-        <div className="absolute inset-0 bg-[#003049]" />
-      </motion.div>
-
       {/* Floating spiritual elements */}
       <motion.div
         className="absolute top-20 left-10 w-8 h-8 text-yellow-300 opacity-30"
@@ -114,7 +101,7 @@ const Experience = () => {
             <span className="text-yellow-500">Krishna Bhumi</span>
           </motion.h2>
           <motion.p
-            className="text-xl text-amber-100 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl text-white max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
@@ -152,13 +139,13 @@ const Experience = () => {
                     transition={{ duration: 0.5 }}
                   >
                     {/* Circular container */}
-                    <div className="w-24 h-24 rounded-full overflow-hidden flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                    <div className="w-24 h-24  rounded-full overflow-hidden flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
                       <img src={experience.icon} alt={experience.title} className="w-full h-full object-cover" />
                     </div>
                   </motion.div>
 
                   <motion.h3
-                    className="text-xl font-bold text-white mb-4 text-center group-hover:text-yellow-300 transition-colors duration-300"
+                    className="text-xl font-bold text-orange-500 mb-4 text-center group-hover:text-yellow-300 transition-colors duration-300"
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 + 0.5 }}
@@ -166,14 +153,14 @@ const Experience = () => {
                   >
                     {experience.title}
                   </motion.h3>
+<motion.p
+  className="text-sm text-gray-800 text-center leading-relaxed group-hover:text-white transition-colors duration-300"
+  initial={{ opacity: 0, y: 10 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ delay: index * 0.1 + 0.7 }}
+  viewport={{ once: true }}
+>
 
-                  <motion.p
-                    className="text-amber-100 text-center leading-relaxed group-hover:text-white transition-colors duration-300"
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 + 0.7 }}
-                    viewport={{ once: true }}
-                  >
                     {experience.description}
                   </motion.p>
                 </motion.div>

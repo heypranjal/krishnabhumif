@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Download, Eye, Home, MapPin, Building2, Users } from "lucide-react";
 const featherImage = "https://i.ibb.co/pj3ndCj6/feather-copy.png";
 const heroImage = "https://i.ibb.co/LhqVWQvk/hero-copy.jpg";
@@ -17,7 +17,7 @@ const Residential = () => {
         <div className="relative z-10 text-center px-4">
           <div>
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
-              Residential <span className="text-orange-500">Properties</span>
+              Residential <span className="text-yellow-400">Properties</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
               Discover our collection of luxury homes in the divine township of Krishna Bhumi
@@ -56,19 +56,19 @@ const Residential = () => {
                 {/* Quick Stats */}
                 <div className="flex flex-wrap justify-center gap-6 text-gray-600">
                   <div className="flex items-center gap-2">
-                    <Building2 className="w-5 h-5 text-orange-500" />
+                    <Building2 className="w-5 h-5 text-yellow-400" />
                     <span className="font-semibold">11 Towers</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Home className="w-5 h-5 text-orange-500" />
+                    <Home className="w-5 h-5 text-yellow-400" />
                     <span className="font-semibold">2 & 3 BHK</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <MapPin className="w-5 h-5 text-orange-500" />
+                    <MapPin className="w-5 h-5 text-yellow-400" />
                     <span className="font-semibold">30 Acres</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Users className="w-5 h-5 text-orange-500" />
+                    <Users className="w-5 h-5 text-yellow-400" />
                     <span className="font-semibold">70% Green Area</span>
                   </div>
                 </div>
@@ -109,7 +109,7 @@ const Residential = () => {
                 {/* Premium Apartments Description */}
                 <div className="bg-white/90 backdrop-blur-md rounded-3xl py-8 px-8 shadow-xl border border-white/30">
                   <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-800">
-                    Premium <span className="text-orange-500">Apartments</span>
+                    Premium <span className="text-yellow-400">Apartments</span>
                   </h2>
                   <p className="text-gray-700 text-lg max-w-5xl mx-auto leading-relaxed text-center">
                     Offering some of the best apartments in Vrindavan, Krishna Bhumi - Govardhan Vas, comes with premium 2 and 3 BHK condominiums spanning 568 - 1800 sq.ft. configured over eleven G+14 buildings.
@@ -121,7 +121,7 @@ const Residential = () => {
                 {/* Project Highlights */}
                 <section>
                   <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-                    Project <span className="text-orange-500">Highlights</span>
+                    Project <span className="text-yellow-400">Highlights</span>
                   </h2>
                   
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
@@ -138,7 +138,7 @@ const Residential = () => {
                             </div>
                           </div>
                           
-                          <h3 className="text-2xl font-bold text-orange-500 mb-2 group-hover:text-orange-600 transition-colors duration-300">
+                          <h3 className="text-2xl font-bold text-yellow-400 mb-2 group-hover:text-orange-600 transition-colors duration-300">
                             {item.value}
                           </h3>
                           <p className="text-gray-700 font-medium">
@@ -153,7 +153,7 @@ const Residential = () => {
                 {/* Apartment Options */}
                 <section>
                   <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-                    Luxury <span className="text-orange-500">Apartments</span>
+                    Luxury <span className="text-yellow-400">Apartments</span>
                   </h2>
                   
                   <div className="grid md:grid-cols-2 gap-8">
@@ -233,7 +233,7 @@ const Residential = () => {
                 {/* Master Plan + Floor Plans */}
                 <section>
                   <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-                    Plans & <span className="text-orange-500">Layouts</span>
+                    Plans & <span className="text-yellow-400">Layouts</span>
                   </h2>
                   
                   <div className="grid md:grid-cols-2 gap-8">
@@ -251,7 +251,7 @@ const Residential = () => {
                           <div>Green Area: 70%</div>
                           <div>Total Towers: 11</div>
                         </div>
-                        <button className="bg-white text-orange-600 px-6 py-3 rounded-xl font-semibold inline-flex items-center gap-2 hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                        <button className="bg-white text-yellow-400 px-6 py-3 rounded-xl font-semibold inline-flex items-center gap-2 hover:shadow-lg transition-all duration-300 transform hover:scale-105">
                           <Eye size={18} /> View Master Plan
                         </button>
                       </div>
@@ -295,7 +295,7 @@ const Residential = () => {
                       <div className="flex-1 overflow-y-auto p-6 space-y-8">
                         {/* 2 BHK Specifications */}
                         <div className="space-y-4">
-                          <h4 className="text-xl font-bold text-orange-500 border-b border-orange-200 pb-2">
+                          <h4 className="text-xl font-bold text-yellow-400 border-b border-orange-200 pb-2">
                             2 BHK Premium Specifications
                           </h4>
                           
@@ -325,7 +325,7 @@ const Residential = () => {
                         
                         {/* 3 BHK Specifications */}
                         <div className="space-y-4">
-                          <h4 className="text-xl font-bold text-orange-500 border-b border-orange-200 pb-2">
+                          <h4 className="text-xl font-bold text-yellow-400 border-b border-orange-200 pb-2">
                             3 BHK Luxury Specifications
                           </h4>
                           
@@ -494,7 +494,7 @@ const Residential = () => {
             {/* Premium Amenities - Common for both */}
             <section>
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-                Premium <span className="text-orange-500">Amenities</span>
+                Premium <span className="text-yellow-400">Amenities</span>
               </h2>
               <p className="text-center text-gray-600 mb-12 text-lg">
                 Experience luxury living with our carefully curated selection of world-class amenities

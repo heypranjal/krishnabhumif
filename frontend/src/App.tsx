@@ -14,11 +14,15 @@ import Arcade from "./components/Arcade";
 import Infinity from "./components/Infinity";
 import Differentiation from "./components/Differentiation";
 import Awards from "./components/Awards";
+import Social from "./components/social";
 import About from "./pages/About";
 import Partner from "./pages/Partner";
 import ContactUs from "./pages/ContactUs";
 import Residential from "./pages/Residential";
 import { Toaster } from "react-hot-toast";
+import Commercial from "./pages/Commercial";
+
+const featherImage = "https://i.ibb.co/pj3ndCj6/feather-copy.png";
 
 function MainPage() {
   return (
@@ -31,6 +35,7 @@ function MainPage() {
       <Experience />
       <Amenities />
       <Awards />
+      <Social />
       <Contact />
     </>
   );
@@ -66,28 +71,47 @@ function App() {
   return (
     <BrowserRouter>
       <Toaster position="top-right" />
-      <ScrollWrapper>
-        <motion.div
-          className="min-h-screen"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.5 }}
-        >
-        {/* passing Navbar on evey page's top */}
-          <Header />
+      <div className="min-h-screen relative">
+        {/* Global Background */}
+        <div
+          className="fixed inset-0 z-0"
+          style={{
+            backgroundImage: `url(${featherImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            opacity: 0.8,
+          }}
+        />
+        
+        {/* All content with higher z-index */}
+        <div className="relative z-10">
+          <ScrollWrapper>
+            <motion.div
+              className="min-h-screen"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.5 }}
+            >
+              {/* passing Navbar on every page's top */}
+              <Header />
 
-          {/* routes starting */}
-          <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/partners" element={<Partner />} />
-            <Route path="/contact-us" element={<ContactUs />} />
-            <Route path="/residential" element={<Residential />} />
-          </Routes>
-          {/* Passing Footer on every page's bottom */}
-          <Footer/>
-        </motion.div>
-      </ScrollWrapper>
+              {/* routes starting */}
+              <Routes>
+                <Route path="/" element={<MainPage />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/partners" element={<Partner />} />
+                <Route path="/contact-us" element={<ContactUs />} />
+                <Route path="/residential" element={<Residential />} />
+                <Route path="/commercial" element={<Commercial />} />
+
+              </Routes>
+              {/* Passing Footer on every page's bottom */}
+              <Footer/>
+            </motion.div>
+          </ScrollWrapper>
+        </div>
+      </div>
     </BrowserRouter>
   );
 }

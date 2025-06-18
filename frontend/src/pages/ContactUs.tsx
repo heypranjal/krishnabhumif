@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const heroImage = "https://i.ibb.co/LhqVWQvk/hero-copy.jpg";
+// const heroImage = "https://i.ibb.co/LhqVWQvk/hero-copy.jpg";
 const featherImage = "https://i.ibb.co/pj3ndCj6/feather-copy.png";
 
 interface ContactFormData {
@@ -136,7 +136,7 @@ const ContactUs = () => {
         {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg">
-            Get in <span className="text-orange-500">Touch</span>
+            Get in <span className="text-yellow-400">Touch</span>
           </h1>
           <p className="text-xl text-white max-w-4xl mx-auto leading-relaxed mb-8 drop-shadow-md">
             Have questions about Krishna Bhumi or need assistance? We're here to help. Reach out to us through any of the following channels or fill out the form below.

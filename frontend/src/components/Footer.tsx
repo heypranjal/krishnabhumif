@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { motion } from 'framer-motion';
 import { Home, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Youtube, ArrowUp, Heart, Bot as Lotus } from 'lucide-react';
 
@@ -90,7 +90,7 @@ const Footer = () => {
               whileHover={{ scale: 1.05 }}
             >
               <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
-                <Home className="w-7 h-7 text-white" />
+                <Home className="w-7 h-7 text-yellow-400" />
               </div>
               <span className="text-3xl font-bold">Krishna Bhumi</span>
             </motion.div>

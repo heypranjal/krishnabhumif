@@ -1,14 +1,11 @@
 import { motion } from "framer-motion";
-const featherImage = "https://i.ibb.co/pj3ndCj6/feather-copy.png";
-
-// Replace these with your actual icons
 import spiritual from "../assets/logoimage1.png";
-const access = "https://i.ibb.co/7dmZQTL0/divinelogo.png"; // Ensure this path is correct
-const architecture = "https://i.ibb.co/N6mzjMBf/archlogo.png";// Ensure this path is correct
-const wellness ="https://i.ibb.co/67vmGL7c/holilogo.png"; // Ensure this path is correct
-const eldercare = "https://i.ibb.co/XZWqtn7t/elder.png" 
-const green ="https://i.ibb.co/9HzJNzyR/green.png"
-const infra ="https://i.ibb.co/BhW5mkF/infra.png"
+const access = "https://i.ibb.co/7dmZQTL0/divinelogo.png";
+const architecture = "https://i.ibb.co/N6mzjMBf/archlogo.png";
+const wellness = "https://i.ibb.co/67vmGL7c/holilogo.png";
+const eldercare = "https://i.ibb.co/XZWqtn7t/elder.png";
+const green = "https://i.ibb.co/9HzJNzyR/green.png";
+const infra = "https://i.ibb.co/BhW5mkF/infra.png";
 
 const differentiators = [
   {
@@ -45,34 +42,22 @@ const differentiators = [
     icon: green,
     title: "Green Living",
     subtitle: "Vast Natural Surroundings",
-    description: "Expansive green zones and outdoor spaces rooted in Vrindavan’s serene and spiritual environment.",
+    description: "Expansive green zones and outdoor spaces rooted in Vrindavan's serene and spiritual environment.",
   },
   {
     icon: infra,
     title: "Community Infrastructure",
     subtitle: "Complete Modern Amenities",
     description: "Everything from gyms and pools to stores and laundromats – a fully self-contained township.",
-  }
+  },
 ];
 
 const KrishnaBhumiDifferentiation = () => {
   return (
     <section id="differentiation" className="py-10 relative overflow-hidden">
-      {/* Feather background image */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${featherImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-          opacity: 60,
-        }}
-      />
-
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <motion.div
-          className="  rounded-3xl bg-white/30 backdrop-blur-sm  shadow-2xl p-10 sm:p-12"
+          className="rounded-3xl bg-white/30 backdrop-blur-sm shadow-2xl p-10 sm:p-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -85,27 +70,62 @@ const KrishnaBhumiDifferentiation = () => {
             Experience a unique blend of spiritual serenity and modern luxury
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="carousel relative mx-auto" style={{
+            ['--items' as any]: differentiators.length,
+            ['--carousel-duration' as any]: '35s',
+            ['--carousel-width' as any]: '80vw',
+            ['--carousel-item-width' as any]: '280px',
+            ['--carousel-item-height' as any]: '420px',
+            ['--carousel-item-gap' as any]: '2rem',
+          }}>
             {differentiators.map((item, idx) => (
-              <motion.div
-                key={idx}
-                className="bg-white/60 backdrop-blur-lg border border-gray-200 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                viewport={{ once: true }}
+              <article
+                key={item.title}
+                className="absolute top-0 bg-white/50 backdrop-blur-lg border border-gray-300 rounded-xl shadow-md flex flex-col"
+                style={{
+                  width: 'var(--carousel-item-width)',
+                  height: 'var(--carousel-item-height)',
+                  left: `calc(100% + var(--carousel-item-gap))`,
+                  animationName: 'marquee',
+                  animationDuration: 'var(--carousel-duration)',
+                  animationTimingFunction: 'linear',
+                  animationIterationCount: 'infinite',
+                  animationDelay: `calc(var(--carousel-duration) / var(--items) * ${idx} * -1)`,
+                  willChange: 'transform',
+                }}
               >
-                <div className="flex justify-center mb-4">
-                  <img src={item.icon} alt={item.title} className="w-14 h-14 object-contain" />
+                <div className="h-52 flex items-center justify-center p-4">
+                  <img src={item.icon} alt={item.title} className="h-full object-contain rounded-t-xl" />
                 </div>
-                <h3 className="text-lg font-semibold text-orange-600 text-center mb-1">{item.title}</h3>
-                <h4 className="text-md text-gray-800 font-medium text-center mb-2">{item.subtitle}</h4>
-                <p className="text-sm text-gray-600 text-center">{item.description}</p>
-              </motion.div>
+                <div className="flex-grow flex flex-col justify-between p-4">
+                  <div>
+                    <h3 className="text-xl font-semibold text-orange-600 text-center mb-1">{item.title}</h3>
+                    <h4 className="text-md text-gray-800 font-medium text-center mb-2">{item.subtitle}</h4>
+                  </div>
+                  <p className="text-sm text-gray-600 text-center">{item.description}</p>
+                </div>
+              </article>
             ))}
           </div>
         </motion.div>
       </div>
+      <style>{`
+        @keyframes marquee {
+          100% {
+            transform: translateX(calc((var(--items) * (var(--carousel-item-width) + var(--carousel-item-gap))) * -1));
+          }
+        }
+        .carousel:hover > article {
+          animation-play-state: paused;
+        }
+        .carousel {
+          overflow: hidden;
+          height: var(--carousel-item-height);
+          width: var(--carousel-width);
+          mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+          position: relative;
+        }
+      `}</style>
     </section>
   );
 };

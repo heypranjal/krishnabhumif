@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 
 // Your existing imports
 const heroImage = "https://i.ibb.co/LhqVWQvk/hero-copy.jpg" ;
@@ -8,7 +8,7 @@ const yamuna = "https://i.ibb.co/MDdJ64gr/Yamuna-Vaas.png";
 const featherImage = "https://i.ibb.co/pj3ndCj6/feather-copy.png";
 
 import {
-  CheckCircle,
+  // CheckCircle,
   Leaf,
   Users,
   Award,
@@ -71,7 +71,7 @@ const About = () => {
           {/* Residential Phases Section */}
           <section className="py-16 px-4 max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              <span className="text-gray-800">Our</span> <span className="text-orange-500">Residential Phases</span>
+              <span className="text-gray-800">Our</span> <span className="text-yellow-400">Residential Phases</span>
             </h2>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -94,7 +94,7 @@ const About = () => {
                   img: yamuna,
                   badge: "Upcoming"
                 }
-              ].map((item, i) => (
+              ].map((item) => (
                 <div
                   key={item.title}
                   className="group relative h-80 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105"
@@ -267,7 +267,7 @@ const About = () => {
           <section className="py-16 px-4 max-w-7xl mx-auto">
             <div className="bg-white/95 rounded-3xl p-8 md:p-12 shadow-xl border border-white/30">
               <h2 className="text-center text-3xl md:text-4xl font-bold mb-12 text-gray-800">
-                Our <span className="text-orange-500">Achievements</span>
+                Our <span className="text-yellow-400">Achievements</span>
               </h2>
               
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">

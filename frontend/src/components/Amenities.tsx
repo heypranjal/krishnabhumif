@@ -4,7 +4,7 @@ import yoga from "../assets/logoimage2.png";  // Ensure this path is correct
 import garden from "../assets/logoimage3.png";  // Ensure this path is correct
 import security from "../assets/logoimage4.png";  // Ensure this path is correct // Ensure this path is correct
 // import featherImage from "../assets/feather.jpeg"
-const featherImage = "https://i.ibb.co/pj3ndCj6/feather-copy.png" 
+// const featherImage = "https://i.ibb.co/pj3ndCj6/feather-copy.png" 
 
 const Amenities = () => {
   const amenities = [
@@ -59,9 +59,9 @@ const Amenities = () => {
   };
 
   return (
-    <section id="amenities" className="py-20 relative overflow-hidden">
+    <section id="amenities" className="py-0 relative overflow-hidden">
       {/* Background with feather image */}
-      <motion.div
+      {/* <motion.div
         className="absolute inset-0 z-0"
         style={{
           backgroundImage: `url(${featherImage})`,
@@ -71,7 +71,7 @@ const Amenities = () => {
         }}
       >
         <div className="absolute inset-0 bg-transparent" />
-      </motion.div>
+      </motion.div> */}
 
       {/* Decorative elements */}
       <motion.div
@@ -117,7 +117,7 @@ const Amenities = () => {
             World-Class <span className="text-yellow-500">Amenities</span>
           </motion.h2>
           <motion.p
-            className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl text-white max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}

@@ -112,7 +112,7 @@ const ChannelPartnerProgram = () => {
             transition={{ duration: 1, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Channel <span className="text-orange-500">Partner Program</span>
+            Channel <span className="text-yellow-500">Partner Program</span>
           </motion.h1>
           <motion.p
             className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-8"
@@ -146,7 +146,7 @@ const ChannelPartnerProgram = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              Partner <span className="text-orange-500">Application Form</span>
+              Partner <span className="text-yellow-400">Application Form</span>
             </motion.h2>
 
             {isSubmitted ? (

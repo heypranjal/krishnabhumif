@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-const featherImage = "https://i.ibb.co/pj3ndCj6/feather-copy.png";
+// const featherImage = "https://i.ibb.co/pj3ndCj6/feather-copy.png";
 
 const Awards = () => {
   const [showAll, setShowAll] = useState(false);
@@ -132,7 +132,7 @@ const Awards = () => {
   return (
     <section id="awards" className="py-8 relative overflow-hidden">
       {/* Background with feather image */}
-      <motion.div
+      {/* <motion.div
         className="absolute inset-0 z-0"
         style={{
           backgroundImage: `url(${featherImage})`,
@@ -142,7 +142,7 @@ const Awards = () => {
         }}
       >
         <div className="absolute inset-0 bg-transparent" />
-      </motion.div>
+      </motion.div> */}
 
       {/* Decorative elements */}
       <motion.div
@@ -188,7 +188,7 @@ const Awards = () => {
             Awards & <span className="text-yellow-500">Recognition</span>
           </motion.h2>
           <motion.p
-            className="text-xl text-black max-w-3xl mx-auto leading-relaxed"
+            className="text-xl text-white max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
