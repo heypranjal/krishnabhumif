@@ -134,6 +134,7 @@ const Contact = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
+          opacity: 1,
         }}
       >
         <div className="absolute inset-0 bg-[#003049]" />

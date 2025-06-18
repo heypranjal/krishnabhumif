@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-const featherImage = "https://i.ibb.co/pj3ndCj6/feather-copy.png";
 
 
 interface FormData {
@@ -59,7 +58,7 @@ const ChannelPartnerProgram = () => {
   return (
     <section id="channel-partner" className="py-20 relative overflow-hidden">
       {/* Background with feather image */}
-      <motion.div
+      {/* <motion.div
         className="absolute inset-0 z-0"
         style={{
           backgroundImage: `url(${featherImage})`,
@@ -68,7 +67,7 @@ const ChannelPartnerProgram = () => {
         }}
       >
         <div className="absolute inset-0 bg-transparent" />
-      </motion.div>
+      </motion.div> */}
 
       {/* Decorative elements */}
       <motion.div

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-const featherImage = "https://i.ibb.co/pj3ndCj6/feather-copy.png";
+const infinityimg = "https://i.ibb.co/bjz6mC05/infinity.png" ;
+
 
 const highlights = [
   {
@@ -137,30 +138,25 @@ const InfinityGroup = () => {
           </motion.div>
 
           {/* Visual Element */}
-          <motion.div
-            className="relative rounded-2xl overflow-hidden shadow-2xl max-w-4xl mx-auto"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <div className="aspect-[2] bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
-              <div className="text-center text-white p-8">
-                <div className="grid grid-cols-3 gap-4 mb-4">
-                  {[...Array(6)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="bg-white/20 rounded-lg aspect-square flex items-center justify-center"
-                    >
-                      <div className="bg-white/30 rounded w-8 h-8"></div>
-                    </div>
-                  ))}
-                </div>
-                <p className="text-lg font-semibold">Modern Office Buildings</p>
-                <p className="text-sm opacity-75 mt-1">Sustainable Architecture</p>
-              </div>
-            </div>
-          </motion.div>
+<motion.div
+  className="relative rounded-2xl overflow-hidden shadow-2xl max-w-xl mx-auto"
+  initial={{ opacity: 0, scale: 0.9 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 1, delay: 0.4 }}
+  viewport={{ once: true }}
+>
+  <div className="relative w-full h-auto">
+    <img 
+      src={infinityimg} 
+      alt="Modern Office Buildings" 
+      className="w-full h-auto rounded-2xl"
+    />
+    <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+      {/* overlay */}
+    </div>
+  </div>
+</motion.div>
+
 
           {/* Key Features Section */}
           <motion.div

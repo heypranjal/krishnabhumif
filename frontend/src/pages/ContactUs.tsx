@@ -119,11 +119,11 @@ const ContactUs = () => {
       {/* Background with feather image */}
       <div
         className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${featherImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
+        // style={{
+        //   backgroundImage: `url(${featherImage})`,
+        //   backgroundSize: 'cover',
+        //   backgroundPosition: 'center',
+        // }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-20" />
       </div>

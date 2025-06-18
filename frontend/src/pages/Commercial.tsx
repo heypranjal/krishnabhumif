@@ -26,7 +26,7 @@ Premium retail and office spaces in prime locations            </p>
       
     <section id="arcade-retail" className="py-20 relative overflow-hidden">
       {/* Background with feather image */}
-      <motion.div
+      {/* <motion.div
         className="absolute inset-0 z-0"
         style={{
           backgroundImage: `url(${featherImage})`,
@@ -35,7 +35,7 @@ Premium retail and office spaces in prime locations            </p>
         }}
       >
         <div className="absolute inset-0 bg-transparent" />
-      </motion.div>
+      </motion.div> */}
 
       {/* Decorative elements */}
       <motion.div
@@ -68,7 +68,7 @@ Premium retail and office spaces in prime locations            </p>
             Krishna Bhumi <span className="text-yellow-500">Arcade Retail</span>
           </motion.h1>
           <motion.p
-            className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-8"
+            className="text-xl text-white max-w-4xl mx-auto leading-relaxed mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}

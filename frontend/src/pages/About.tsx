@@ -41,12 +41,12 @@ const About = () => {
       {/* IMPROVED: Single background container with clear visibility */}
       <div className="relative min-h-screen">
         {/* Background image layer */}
-        <div 
+        {/* <div 
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
             backgroundImage: `url(${featherImage})`,
           }}
-        />
+        /> */}
         
         {/* Overlay layer for better readability */}
         <div className="absolute inset-0 bg-white/50" />
@@ -136,103 +136,117 @@ const About = () => {
 
           {/* Pillars Section */}
           <section className="py-16 px-4 max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Our Legacy",
-                  icon: <Award className="w-12 h-12 text-orange-500" />,
-                  text: "Building upon decades of pioneering green building development in India."
-                },
-                {
-                  title: "Sustainability",
-                  icon: <Leaf className="w-12 h-12 text-green-600" />,
-                  text: "Committed to environmental consciousness with IGBC Gold-rated buildings."
-                },
-                {
-                  title: "Community Focus",
-                  icon: <Users className="w-12 h-12 text-blue-600" />,
-                  text: "Creating sustainable communities with deep connections to Vrindavan."
-                }
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="bg-white/90 rounded-2xl shadow-lg p-8 text-center hover:scale-105 hover:shadow-2xl transition-all duration-300"
-                >
-                  <div className="flex justify-center mb-6">{item.icon}</div>
-                  <h3 className="text-xl font-bold mb-4 text-gray-800">{item.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{item.text}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+  <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+    {[
+      {
+        title: "Our Legacy",
+        icon: "https://cdn-icons-png.flaticon.com/512/1828/1828884.png", // example award icon
+        text: "Building upon decades of pioneering green building development in India.",
+      },
+      {
+        title: "Sustainability",
+        icon: "https://cdn-icons-png.flaticon.com/512/2909/2909763.png", // example leaf
+        text: "Committed to environmental consciousness with IGBC Gold-rated buildings.",
+      },
+      {
+        title: "Community Focus",
+        icon: "https://cdn-icons-png.flaticon.com/512/1053/1053244.png", // example users
+        text: "Creating sustainable communities with deep connections to Vrindavan.",
+      },
+    ].map((item, i) => (
+      <div
+        key={i}
+        className="bg-white/90 rounded-2xl shadow-lg p-8 text-center hover:scale-105 hover:shadow-2xl transition-all duration-300"
+      >
+        <div className="flex justify-center mb-6">
+          <img
+            src={item.icon}
+            alt={item.title}
+            className="w-12 h-12 object-contain" // to increase the size of the image e.g. - w-14 h-14
+          />
+        </div>
+        <h3 className="text-xl font-bold mb-4 text-gray-800">{item.title}</h3>
+        <p className="text-gray-600 leading-relaxed">{item.text}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
 
           {/* Vision Section */}
-          <section className="py-16 px-4 max-w-7xl mx-auto">
-            <div className="bg-white/90 rounded-3xl p-8 md:p-12 shadow-xl border border-white/30">
-              <div className="flex flex-col lg:flex-row items-center gap-12">
-                <div className="lg:w-1/2">
-                  <h2 className="text-4xl font-bold mb-6 text-black/100">
-                    The Krishna Bhumi <span className="text-yellow-500">Vision</span>
-                  </h2>
-                  <p className="mb-8 text-black-700 text-lg leading-relaxed">
-                    Krishna Bhumi is more than just a residential and commercial development – 
-                    it's an iconic life-changing experience centered around a magnificent Krishna temple.
-                  </p>
+         <section className="py-16 px-4 max-w-7xl mx-auto">
+  <div className="bg-white/90 rounded-3xl p-8 md:p-12 shadow-xl border border-white/30">
+    <div className="flex flex-col lg:flex-row items-center gap-12">
+      <div className="lg:w-1/2">
+        <h2 className="text-4xl font-bold mb-6 text-black/100">
+          The Krishna Bhumi <span className="text-yellow-500">Vision</span>
+        </h2>
+        <p className="mb-8 text-black-700 text-lg leading-relaxed">
+          Krishna Bhumi is more than just a residential and commercial development – 
+          it's an iconic life-changing experience centered around a magnificent Krishna temple.
+        </p>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {[
-                      {
-                        title: "Krishna Bhumi Arcade",
-                        text: "Premium commercial complex",
-                        icon: "🏢"
-                      },
-                      {
-                        title: "Luxury Living",
-                        text: "Villas and Apartments with contemporary comfort",
-                        icon: "🏠"
-                      },
-                      {
-                        title: "Sacred Connection",
-                        text: "Deep connection to Vrindavan's sacred environment",
-                        icon: "🕉️"
-                      },
-                      {
-                        title: "Modern Spirituality",
-                        text: "Modern amenities with a spiritual atmosphere",
-                        icon: "✨"
-                      },
-                    ].map((item, i) => (
-                      <div
-                        key={i}
-                        className="bg-gradient-to-br from-white/80 to-white/60 rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
-                      >
-                        <div className="text-2xl mb-2">{item.icon}</div>
-                        <h4 className="font-bold mb-1 text-gray-800">{item.title}</h4>
-                        <p className="text-sm text-gray-600">{item.text}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="lg:w-1/2">
-                  <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
-                    <div
-                      className="absolute inset-0 bg-cover bg-center"
-                      style={{
-                        backgroundImage: `url(${featherImage})`,
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
-                      <div className="absolute bottom-0 left-0 right-0 p-6">
-                        <h3 className="text-xl font-bold text-white mb-2">Krishna Bhumi Vision</h3>
-                        <p className="text-white/90">Experience divine living</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {[
+            {
+              title: "Krishna Bhumi Arcade",
+              text: "Premium commercial complex",
+              icon: "https://cdn-icons-png.flaticon.com/512/2920/2920054.png", // building
+            },
+            {
+              title: "Luxury Living",
+              text: "Villas and Apartments with contemporary comfort",
+              icon: "https://cdn-icons-png.flaticon.com/512/1684/1684392.png", // home
+            },
+            {
+              title: "Sacred Connection",
+              text: "Deep connection to Vrindavan's sacred environment",
+              icon: "https://cdn-icons-png.flaticon.com/512/3917/3917132.png", // Om symbol
+            },
+            {
+              title: "Modern Spirituality",
+              text: "Modern amenities with a spiritual atmosphere",
+              icon: "https://cdn-icons-png.flaticon.com/512/3468/3468645.png", // sparkle
+            },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="bg-gradient-to-br from-white/80 to-white/60 rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
+            >
+              <div className="mb-2 h-12 w-12 flex items-center justify-center">
+                <img
+                  src={item.icon}
+                  alt={item.title}
+                  className="w-12 h-12 object-contain"
+                />
               </div>
+              <h4 className="font-bold mb-1 text-gray-800">{item.title}</h4>
+              <p className="text-sm text-gray-600">{item.text}</p>
             </div>
-          </section>
+          ))}
+        </div>
+      </div>
+
+      <div className="lg:w-1/2">
+        <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url(${featherImage})`,
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+            <div className="absolute bottom-0 left-0 right-0 p-6">
+              <h3 className="text-xl font-bold text-white mb-2">Krishna Bhumi Vision</h3>
+              <p className="text-white/90">Experience divine living</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
           {/* Society & Philosophy Section */}
           <section className="py-16 px-4 max-w-7xl mx-auto">

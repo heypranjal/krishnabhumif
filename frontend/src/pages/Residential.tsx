@@ -28,15 +28,10 @@ const Residential = () => {
 
       <section className="relative min-h-screen overflow-hidden">
         {/* Background image layer */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-fixed"
-          style={{
-            backgroundImage: `url(${featherImage})`,
-          }}
-        />
+        {/*  */}
         
         {/* Overlay layer for better readability */}
-        <div className="absolute inset-0 bg-white/20 backdrop-blur-[1px]" />
+        <div className="absolute inset-0  backdrop-blur-[1px]" />
 
         {/* Decorative elements */}
         <div className="absolute top-10 right-10 w-32 h-32 bg-orange-200 rounded-full opacity-20 z-5 animate-pulse" />
@@ -120,7 +115,7 @@ const Residential = () => {
 
                 {/* Project Highlights */}
                 <section>
-                  <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+                  <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
                     Project <span className="text-yellow-400">Highlights</span>
                   </h2>
                   
@@ -152,7 +147,7 @@ const Residential = () => {
 
                 {/* Apartment Options */}
                 <section>
-                  <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+                  <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
                     Luxury <span className="text-yellow-400">Apartments</span>
                   </h2>
                   
@@ -232,56 +227,57 @@ const Residential = () => {
 
                 {/* Master Plan + Floor Plans */}
                 <section>
-                  <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+                  <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
                     Plans & <span className="text-yellow-400">Layouts</span>
                   </h2>
                   
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div>
-                      <div className="bg-gradient-to-r from-orange-400 to-red-500 p-8 rounded-3xl text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                        <div className="flex items-center gap-4 mb-4">
-                          <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                            <MapPin className="w-6 h-6" />
-                          </div>
-                          <h3 className="text-2xl font-bold">Master Plan</h3>
-                        </div>
-                        <p className="mb-2 text-white/90">Complete township layout</p>
-                        <div className="space-y-2 mb-6 text-white/90">
-                          <div>Total Area: 30 Acres</div>
-                          <div>Green Area: 70%</div>
-                          <div>Total Towers: 11</div>
-                        </div>
-                        <button className="bg-white text-yellow-400 px-6 py-3 rounded-xl font-semibold inline-flex items-center gap-2 hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                          <Eye size={18} /> View Master Plan
-                        </button>
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <div className="bg-gradient-to-r from-green-400 to-emerald-600 p-8 rounded-3xl text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                        <div className="flex items-center gap-4 mb-4">
-                          <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                            <Building2 className="w-6 h-6" />
-                          </div>
-                          <h3 className="text-2xl font-bold">Floor Plans</h3>
-                        </div>
-                        <p className="mb-2 text-white/90">2 & 3 BHK configurations</p>
-                        <div className="space-y-2 mb-6 text-white/90">
-                          <div><strong>2 BHK:</strong> 568-1100 sq.ft</div>
-                          <div><strong>3 BHK:</strong> 1100-1800 sq.ft</div>
-                        </div>
-                        <button className="bg-white text-green-700 px-6 py-3 rounded-xl font-semibold inline-flex items-center gap-2 hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                          <Download size={18} /> Download Floor Plans
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+                 <div className="grid md:grid-cols-2 gap-8">
+  <div className="flex">
+    <div className="bg-white/90 backdrop-blur-sm p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/30 space-y-4 transform hover:scale-105 h-full w-full">
+      <div className="flex items-center gap-4 mb-4">
+        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+          <MapPin className="w-6 h-6" />
+        </div>
+        <h3 className="text-2xl text-orange-500 font-bold">Master Plan</h3>
+      </div>
+      <p className="mb-2 text-black">Complete township layout</p>
+      <div className="space-y-2 mb-6 text-black">
+        <div>Total Area: 30 Acres</div>
+        <div>Green Area: 70%</div>
+        <div>Total Towers: 11</div>
+      </div>
+      <button className="bg-white text-yellow-400 px-6 py-3 rounded-xl font-semibold inline-flex items-center gap-2 hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+        <Eye size={18} /> View Master Plan
+      </button>
+    </div>
+  </div>
+
+  <div className="flex">
+    <div className="bg-white/90 backdrop-blur-sm p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/30 space-y-4 transform hover:scale-105 h-full w-full">
+      <div className="flex items-center gap-4 mb-4">
+        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+          <Building2 className="w-6 h-6" />
+        </div>
+        <h3 className="text-2xl text-orange-500 font-bold">Floor Plans</h3>
+      </div>
+      <p className="mb-2 text-black">2 & 3 BHK configurations</p>
+      <div className="space-y-2 mb-6 text-black">
+        <div><strong>2 BHK:</strong> 568–1100 sq.ft</div>
+        <div><strong>3 BHK:</strong> 1100–1800 sq.ft</div>
+      </div>
+      <button className="bg-white text-green-700 px-6 py-3 rounded-xl font-semibold inline-flex items-center gap-2 hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+        <Download size={18} /> Download Floor Plans
+      </button>
+    </div>
+  </div>
+</div>
+
                 </section>
 
                 {/* Price List & Payment Plan */}
                 <section>
-                  <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-                    Price List & Payment <span className="text-orange-500">Plan</span>
+                  <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
+                    Price List & <span className="text-yellow-400">Payment Plan</span>
                   </h2>
                   
                   <div className="grid md:grid-cols-2 gap-8">
@@ -493,41 +489,76 @@ const Residential = () => {
 
             {/* Premium Amenities - Common for both */}
             <section>
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
                 Premium <span className="text-yellow-400">Amenities</span>
               </h2>
-              <p className="text-center text-gray-600 mb-12 text-lg">
+              <p className="text-center text-white mb-12 text-lg">
                 Experience luxury living with our carefully curated selection of world-class amenities
               </p>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {[
-                  { title: "Modern Kitchen", desc: "Premium Fittings & Modular Design", icon: "🍳" },
-                  { title: "Spacious Balconies", desc: "Garden Views & Natural Light", icon: "🌅" },
-                  { title: "Premium Flooring", desc: "High-quality Vitrified Tiles", icon: "🏠" },
-                  { title: "Bathroom Fixtures", desc: "Premium Quality & Modern Design", icon: "🚿" },
-                  { title: "Natural Light", desc: "Ample Ventilation & Sunlight", icon: "☀️" },
-                  { title: "Power Backup", desc: "24/7 Uninterrupted Supply", icon: "⚡" },
-                  { title: "Security System", desc: "Round-the-clock Surveillance", icon: "🔒" },
-                  { title: "Parking Space", desc: "Dedicated & Secure Parking", icon: "🚗" },
-                ].map((amenity, idx) => (
-                  <div key={idx} className="group">
-                    <div className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/30 text-center h-full transform hover:scale-105">
-                      <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                        {amenity.icon}
-                      </div>
-                      
-                      <h3 className="font-bold text-gray-800 text-lg mb-2 group-hover:text-orange-600 transition-colors duration-300">
-                        {amenity.title}
-                      </h3>
-                      
-                      <p className="text-gray-600 text-sm leading-relaxed">
-                        {amenity.desc}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+  {[
+    {
+      title: "Modern Kitchen",
+      desc: "Premium Fittings & Modular Design",
+      icon: "https://cdn-icons-png.flaticon.com/512/3186/3186127.png",
+    },
+    {
+      title: "Spacious Balconies",
+      desc: "Garden Views & Natural Light",
+      icon: "https://cdn-icons-png.flaticon.com/512/3103/3103446.png",
+    },
+    {
+      title: "Premium Flooring",
+      desc: "High-quality Vitrified Tiles",
+      icon: "https://cdn-icons-png.flaticon.com/512/3467/3467071.png",
+    },
+    {
+      title: "Bathroom Fixtures",
+      desc: "Premium Quality & Modern Design",
+      icon: "https://cdn-icons-png.flaticon.com/512/3099/3099619.png",
+    },
+    {
+      title: "Natural Light",
+      desc: "Ample Ventilation & Sunlight",
+      icon: "https://cdn-icons-png.flaticon.com/512/869/869869.png",
+    },
+    {
+      title: "Power Backup",
+      desc: "24/7 Uninterrupted Supply",
+      icon: "https://cdn-icons-png.flaticon.com/512/1030/1030374.png",
+    },
+    {
+      title: "Security System",
+      desc: "Round-the-clock Surveillance",
+      icon: "https://cdn-icons-png.flaticon.com/512/484/484167.png",
+    },
+    {
+      title: "Parking Space",
+      desc: "Dedicated & Secure Parking",
+      icon: "https://cdn-icons-png.flaticon.com/512/7439/7439819.png",
+    },
+  ].map((amenity, idx) => (
+    <div key={idx} className="group">
+      <div className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/30 text-center h-full transform hover:scale-105">
+        <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
+          <img
+            src={amenity.icon}
+            alt={amenity.title}
+            className="w-12 h-12 mx-auto"
+          />
+        </div>
+
+        <h3 className="font-bold text-gray-800 text-lg mb-2 group-hover:text-orange-600 transition-colors duration-300">
+          {amenity.title}
+        </h3>
+
+        <p className="text-gray-600 text-sm leading-relaxed">{amenity.desc}</p>
+      </div>
+    </div>
+  ))} 
+</div>
+
             </section>
           </div>
         </div>
