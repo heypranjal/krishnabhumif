@@ -14,13 +14,13 @@ import Arcade from "./components/Arcade";
 import Infinity from "./components/Infinity";
 import Differentiation from "./components/Differentiation";
 import Awards from "./components/Awards";
-import Social from "./components/social";
 import About from "./pages/About";
 import Partner from "./pages/Partner";
 import ContactUs from "./pages/ContactUs";
 import Residential from "./pages/Residential";
 import { Toaster } from "react-hot-toast";
 import Commercial from "./pages/Commercial";
+import Social from "./components/Social";
 
 const featherImage = "https://i.ibb.co/pj3ndCj6/feather-copy.png";
 
