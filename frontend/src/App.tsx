@@ -50,7 +50,7 @@ function ScrollWrapper({ children }: { children: React.ReactNode }) {
     const scroll = new LocomotiveScroll({
       el: containerRef.current!,
       smooth: true,
-      lerp: 0.08,
+      lerp: 0.2,
       smartphone: {
         smooth: true,
       },
