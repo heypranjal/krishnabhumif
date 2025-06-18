@@ -169,27 +169,37 @@ const Header = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden absolute top-full left-0 w-full bg-white z-40 shadow-md rounded-b-xl px-6 py-4"
+              className="md:hidden absolute top-full left-0 w-full bg-white z-40 shadow-md rounded-b-xl px-6 py-4 space-y-2"
             >
-              {navItems.map((item) => (
-                item.type === 'route' ? (
-                  <button
-                    key={item.id}
-                    onClick={() => handleNavigation(item.id)}
-                    className="w-full text-left py-2 text-gray-800 font-medium hover:text-orange-600"
-                  >
-                    {item.label}
-                  </button>
-                ) : (
-                  <div key={item.id} className="py-2">
-                    <p className="font-semibold text-gray-700 mb-1">Projects</p>
-                    <div className="flex flex-col space-y-1 pl-4">
-                      <button onClick={() => handleNavigation('/residential')} className="text-gray-600 hover:text-orange-600">Residential</button>
-                      <button onClick={() => handleNavigation('/commercial')} className="text-gray-600 hover:text-orange-600">Commercial</button>
+              {navItems.map((item) => {
+                if (item.type === 'route') {
+                  return (
+                    <button
+                      key={item.id}
+                      onClick={() => handleNavigation(item.id)}
+                      className="w-full text-left py-2 text-gray-800 font-medium hover:text-orange-600"
+                    >
+                      {item.label}
+                    </button>
+                  );
+                }
+
+                if (item.type === 'dropdown') {
+                  return (
+                    <div key={item.id} className="w-full">
+                      <p className="text-left font-semibold text-gray-800 py-2">
+                        {item.label}
+                      </p>
+                      <div className="pl-4 flex flex-col space-y-1">
+                        <button onClick={() => handleNavigation('/residential')} className="text-left text-gray-700 hover:text-orange-600">Residential</button>
+                        <button onClick={() => handleNavigation('/commercial')} className="text-left text-gray-700 hover:text-orange-600">Commercial</button>
+                      </div>
                     </div>
-                  </div>
-                )
-              ))}
+                  );
+                }
+
+                return null;
+              })}
             </motion.div>
           )}
         </AnimatePresence>
