@@ -41,7 +41,7 @@ function MainPage() {
   );
 }
 
-// 👇 Locomotive Scroll wrapper to re-init on route change
+// Scroll wrapper with mobile + resize fix
 function ScrollWrapper({ children }: { children: React.ReactNode }) {
   const containerRef = useRef(null);
   const location = useLocation();
@@ -51,17 +51,27 @@ function ScrollWrapper({ children }: { children: React.ReactNode }) {
       el: containerRef.current!,
       smooth: true,
       lerp: 0.08,
+      smartphone: {
+        smooth: true,
+      },
+      tablet: {
+        smooth: true,
+      },
     });
 
     scroll.update();
 
+    const handleResize = () => scroll.update();
+    window.addEventListener("resize", handleResize);
+
     return () => {
       scroll.destroy();
+      window.removeEventListener("resize", handleResize);
     };
-  }, [location.pathname]); // re-init on route change
+  }, [location.pathname]);
 
   return (
-    <div data-scroll-container ref={containerRef}>
+    <div data-scroll-container ref={containerRef} className="min-h-screen">
       {children}
     </div>
   );
@@ -83,8 +93,8 @@ function App() {
             opacity: 0.8,
           }}
         />
-        
-        {/* All content with higher z-index */}
+
+        {/* Main content */}
         <div className="relative z-10">
           <ScrollWrapper>
             <motion.div
@@ -93,10 +103,8 @@ function App() {
               animate={{ opacity: 1 }}
               transition={{ duration: 1.5 }}
             >
-              {/* passing Navbar on every page's top */}
               <Header />
 
-              {/* routes starting */}
               <Routes>
                 <Route path="/" element={<MainPage />} />
                 <Route path="/about" element={<About />} />
@@ -104,10 +112,9 @@ function App() {
                 <Route path="/contact-us" element={<ContactUs />} />
                 <Route path="/residential" element={<Residential />} />
                 <Route path="/commercial" element={<Commercial />} />
-
               </Routes>
-              {/* Passing Footer on every page's bottom */}
-              <Footer/>
+
+              <Footer />
             </motion.div>
           </ScrollWrapper>
         </div>
