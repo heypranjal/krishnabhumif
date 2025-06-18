@@ -1,11 +1,9 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Home, Phone, Star, Users, MapPin, Menu, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const logo = "https://i.ibb.co/HLvdRBkZ/weblogo-copy.png";
-
-// Image URLs
 const DEFAULT_IMAGE = "https://i.ibb.co/3pJZBWD/sample-project.jpg";
 const RESIDENTIAL_IMAGE = "https://i.ibb.co/vXQ4ScM/residential.jpg";
 const COMMERCIAL_IMAGE = "https://i.ibb.co/tPZ8mTJ/commercial.jpg";
@@ -14,16 +12,40 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<'default' | 'residential' | 'commercial'>('default');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const dropdownRef = useRef(null);
   const navigate = useNavigate();
 
   const handleNavigation = (path: string) => {
     navigate(path);
+    setIsDropdownOpen(false);
+    setIsMobileMenuOpen(false);
   };
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const scrollContainer = document.querySelector('[data-scroll-container]');
+    const handleScroll = () => {
+      const scrollTop = scrollContainer?.scrollTop || window.scrollY;
+      setIsScrolled(scrollTop > 50);
+    };
+
+    scrollContainer?.addEventListener('scroll', handleScroll);
+    return () => scrollContainer?.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !(dropdownRef.current as HTMLElement).contains(e.target as Node)
+      ) {
+        setIsDropdownOpen(false);
+        setHoveredItem('default');
+        setIsMobileMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   const navItems = [
@@ -45,7 +67,7 @@ const Header = () => {
   return (
     <div className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-4 relative">
           {/* Logo */}
           <button onClick={() => handleNavigation('/')} className="flex items-center space-x-2 z-50">
             <img src={logo} alt="Krishna Bhumi Logo" className="w-14 h-14 object-contain rounded-full" />
@@ -65,7 +87,8 @@ const Header = () => {
                     key={item.id}
                     className="relative group"
                     onMouseEnter={() => { setHoveredItem('default'); setIsDropdownOpen(true); }}
-                    onMouseLeave={() => { setIsDropdownOpen(false); }}
+                    onMouseLeave={() => { setIsDropdownOpen(false); setHoveredItem('default'); }}
+                    ref={dropdownRef}
                   >
                     <button className={`flex items-center space-x-1 px-3 py-2 rounded-lg transition-all duration-300 ${isScrolled ? 'text-gray-700 hover:text-orange-600' : 'text-white hover:text-yellow-300'}`}>
                       <IconComponent className="w-4 h-4" />
@@ -99,12 +122,11 @@ const Header = () => {
                             </button>
                           </div>
 
-                          {/* Dynamic Image */}
                           <div className="w-72 h-48 rounded-lg overflow-hidden shadow-lg border border-gray-300">
                             <motion.img
                               key={hoveredItem}
                               src={getImage()}
-                              alt="Projects Preview"
+                              alt={`Preview of ${hoveredItem}`}
                               className="object-cover w-full h-full"
                               initial={{ opacity: 0.5, scale: 1.05 }}
                               animate={{ opacity: 1, scale: 1 }}
@@ -133,11 +155,44 @@ const Header = () => {
             Book Visit
           </button>
 
-          {/* Mobile Menu */}
-          <button className={`md:hidden p-2 rounded-lg transition-all duration-300 ${isScrolled ? 'text-gray-700' : 'text-white'}`}>
-            {isDropdownOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {/* Mobile Hamburger */}
+          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className={`md:hidden p-2 rounded-lg transition-all duration-300 ${isScrolled ? 'text-gray-700' : 'text-white'}`}>
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
+
+        {/* Mobile Menu Panel */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden absolute top-full left-0 w-full bg-white z-40 shadow-md rounded-b-xl px-6 py-4"
+            >
+              {navItems.map((item) => (
+                item.type === 'route' ? (
+                  <button
+                    key={item.id}
+                    onClick={() => handleNavigation(item.id)}
+                    className="w-full text-left py-2 text-gray-800 font-medium hover:text-orange-600"
+                  >
+                    {item.label}
+                  </button>
+                ) : (
+                  <div key={item.id} className="py-2">
+                    <p className="font-semibold text-gray-700 mb-1">Projects</p>
+                    <div className="flex flex-col space-y-1 pl-4">
+                      <button onClick={() => handleNavigation('/residential')} className="text-gray-600 hover:text-orange-600">Residential</button>
+                      <button onClick={() => handleNavigation('/commercial')} className="text-gray-600 hover:text-orange-600">Commercial</button>
+                    </div>
+                  </div>
+                )
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
